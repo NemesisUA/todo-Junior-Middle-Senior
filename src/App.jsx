@@ -1,15 +1,15 @@
-import './App.css'
-import { JuniorTodo } from './components/JuniorTodo'
+import './App.css';
+import { JuniorTodo } from './components/JuniorTodo';
+import { JuniorTodoFixMe } from './components/JuniorTodoFixMe';
 
 function App() {
-
   return (
-    <div className='app'>
+    <div className="app">
       <h1>Todo list in Junior, Middle and Senior style</h1>
 
-      <JuniorTodo />
+      <JuniorTodoFixMe />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
