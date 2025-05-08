@@ -52,7 +52,7 @@ h1 {
 
 ul {
   list-style: none;
-  padding: 0;  
+  padding: 0;
 }
 
 li {
@@ -72,12 +72,13 @@ li:hover {
   box-shadow: var(--shadow-md);
 }
 
-input[type="checkbox"]:checked + span {
+input[type='checkbox']:checked + span {
   text-decoration: line-through;
   color: #888;
 }
 
-h2, h3 {
+h2,
+h3 {
   color: var(--text-color);
   margin-bottom: 1rem;
 }
@@ -94,7 +95,7 @@ h3 {
   color: var(--primary-color);
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   cursor: pointer;
 }
 
@@ -106,5 +107,5 @@ input[type="checkbox"] {
 
 .trashkan:hover {
   cursor: pointer;
-  color: #dc2626;  /* Red color on hover */
+  color: #dc2626; /* Red color on hover */
 }
