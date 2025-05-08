@@ -1,13 +1,14 @@
 import './App.css';
-import { JuniorTodo } from './components/JuniorTodo';
-import { JuniorTodoFixMe } from './components/JuniorTodoFixMe';
+//import { JuniorTodo } from './components/JuniorTodo';
+//import { JuniorTodoFixMe } from './components/JuniorTodoFixMe';
+import { MiddleTodo } from './components/MiddleTodo';
 
 function App() {
   return (
     <div className="app">
       <h1>Todo list in Junior, Middle and Senior style</h1>
 
-      <JuniorTodoFixMe />
+      <MiddleTodo />
     </div>
   );
 }
