@@ -21,7 +21,7 @@ const todoReducer = (state, action) => {
   }
 }
 
-export const SeniorTodo = () => {
+export const UseReducerTodo = () => {
   const [todos, dispatch] = useReducer(todoReducer, initialTodos);
   const [text, setText] = useState('');
 
