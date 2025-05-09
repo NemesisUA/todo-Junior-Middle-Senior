@@ -1,31 +1,44 @@
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 import '../App.css';
 
+const initialTodos = [];
+
+const todoReducer = (state, action) => {
+  switch (action.type) {
+    case "ADD_TODO":
+      return [...state, { id: Date.now(), title: action.payload, done: false }];
+
+    case "TOGGLE_TODO":
+      return state.map((todo) =>
+        todo.id === action.payload ? { ...todo, done: !todo.done } : todo
+      );
+
+    case "DELETE_TODO":
+      return state.filter((todo) => todo.id !== action.payload);
+
+    default:
+      return state;
+  }
+}
+
 export const SeniorTodo = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, dispatch] = useReducer(todoReducer, initialTodos);
   const [text, setText] = useState('');
 
   const handleAddTodo = () => {
     if (!text.trim()) {
       return;
     }
-    setTodos((prevTodos) => [
-      ...prevTodos,
-      { id: Date.now(), title: text.trim(), done: false },
-    ]);
+    dispatch({ type: "ADD_TODO", payload: text.trim() });
     setText('');
   };
 
   const toggleTodo = (id) => {
-    setTodos((prevTodos) =>
-      prevTodos.map((todo) =>
-        todo.id === id ? { ...todo, done: !todo.done } : todo
-      )
-    );
+    dispatch({ type: "TOGGLE_TODO", payload: id });
   };
 
   const deleteTodo = (id) => {
-    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+    dispatch({ type: "DELETE_TODO", payload: id });
   };
 
   return (
